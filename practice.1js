@@ -1,0 +1,286 @@
+
+// const heading = React.createElement('h1', { id: 'heading' }, 'hello react')
+// //it is used to create tags
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+// console.log(heading)
+// //to implement this into web page we have to use reactdom
+// root.render(heading)
+// //to have the h1 tag under div tag send heading to root id
+// //render method take the react element nothing but javascript object and convert it to tag h1 and put it to the div tag
+// const head = React.createElement('h4', {}, 'hello react once again')
+// const root1 = ReactDOM.createRoot(document.getElementById('root2'))
+// root1.render(head)
+// When a component is rendered, React takes the element returned by the render() method and converts it into a set of instructions for the browser to display it on the screen. These instructions are called the virtual DOM (Document Object Model), and they are used to update the actual DOM when there are changes in the state or props of the component.
+
+// To summarize, the render() method is used to define what a component should display on the screen. It returns a React element, which is used by React to generate the virtual DOM and update the actual DOM when there are changes in the component's state or props.
+
+//code 2
+
+// const parent = React.createElement('div', { id: 'parent' }, [
+//   React.createElement('div', { id: 'child0' }, [
+//     React.createElement('h1', {}, 'Hello'),
+//     React.createElement('h2', {}, 'Hi'),
+//   ]),
+//   React.createElement('div', { id: 'child1' }, [
+//     React.createElement('h1', {}, 'Hello1'),
+//     React.createElement('h2', {}, 'Hi1234'),
+//   ]),
+// ])
+// const root2 = ReactDOM.createRoot(document.getElementById('root3'))
+// root2.render(parent)
+// import { createElement } from 'react'
+// const parent = React.createElement('div', { id: 'parent' }, [
+//   React.createElement('div', { id: 'child0' }, [
+//     React.createElement('h1', {}, 'Hello'),
+//     React.createElement('h2', {}, 'Hi'),
+//   ]),
+//   React.createElement('div', { id: 'child1' }, [
+//     React.createElement('h1', {}, 'Hello1'),
+//     React.createElement('h2', {}, 'Hi1234'),
+//   ]),
+// ])
+// const root2 = ReactDOM.createRoot(document.getElementById('root3'))
+// root2.render(parent)
+//code3
+// const p1 = React.createElement('div', { id: 'hellllo' }, [
+//   React.createElement('h1', { id: 'hellllo' }, 'sanjay10'),
+//   React.createElement('h2', { id: 'hellllo' }, 'sanjay12'),
+// ])
+
+// const c1 = ReactDOM.createRoot(document.getElementById('abc'))
+// c1.render(p1)
+//code 4
+// const z1 = React.createElement('h1', { key: 'h1' }, 'namaste react')
+// const z2 = React.createElement('h1', { key: 'h2' }, 'namaste js')
+
+// // Rendering the elements with unique key props
+// const element = React.createElement('div', null, [z1, z2])
+
+// Render the element to the DOM
+// const z4 = ReactDOM.createRoot(document.getElementById('abc'))
+// z4.render(element)
+// const jsx1 = (
+//   // <h1 id="jsx" key="h1">
+//   //   this is jsx
+//   // </h1>
+//   <h1>
+//     <h2>
+//       <h3>nested header</h3>
+//     </h2>
+//   </h1>
+// )
+// const z5 = ReactDOM.createRoot(document.getElementById('jsx'))
+// z5.render(jsx1)
+// const h1 = (
+//   <h1 id="title" key="aa">
+//     using jsx
+//   </h1>
+// )
+//React component
+//functional component NEW
+//class based component OLD
+
+//functional to put react element in react componenet
+// const Headercomponent = () => {
+//   return (
+//     <div>
+//       {h1}
+//       <h2>hello component</h2>
+//       <h2>ok hi</h2>
+//     </div>
+//   )
+// }
+//put functional compoenent inside functional component
+// const h3 = () => (
+//   <h1 id="title" key="aa">
+//     using jsx
+//   </h1>
+// )
+// // const Headercomponent = () => {
+// //   return (
+// //     <div>
+// //       {h3()}
+// //       <h2>hello component</h2>
+// //       <h2>ok hi</h2>
+// //     </div>
+// //   )
+// // }
+// const Headercomponent = () => {
+//   return (
+//     <div>
+//       {1 + 2 + 3}//any piece of js code could be written over here within{}
+//       <h2>hello component</h2>
+//       <h2>ok hi</h2>
+//       {h3()}
+//     </div>
+//   )
+// }
+
+//arrow function without return statement
+// const Headercomponent2 = () => (
+//   <div>
+//     <h1>hello component</h1>
+//     <h2>ok hi</h2>
+//   </div>
+// )
+// const z4 = ReactDOM.createRoot(document.getElementById('abc'))
+// z4.render(<Headercomponent />)
+// //Assignment 3
+// const headerElement = React.createElement(
+//   'h1',
+//   {},
+//   React.createElement('h2', {}, React.createElement('h1', {}, 'nested react')),
+// )
+// // const a1 = ReactDOM.createRoot(document.getElementById('assign'))
+// // a1.render(headerElement)
+
+// //Question 2
+// //using jsx
+// const headerElement1 = (
+//   <h1>
+//     <h2>
+//       <h3>Nested react</h3>
+//     </h2>
+//   </h1>
+// )
+// const a1 = ReactDOM.createRoot(document.getElementById('assign'))
+// a1.render(headerElement)
+//Question 3 using functional componenets
+// const headerElement2 = () => {
+//   return (
+//     <h1>
+//       <h2>
+//         {1 + 2 + 3}
+//         <h3>nested react</h3>
+//       </h2>
+//     </h1>
+//   )
+// }
+// const a1 = ReactDOM.createRoot(document.getElementById('assign'))
+// a1.render(headerElement2())
+
+//config driven UI
+// //carousel in bangalore offer is there from backend api sends the data in delhi offers are not there api sends the data
+// const config = [
+//   {
+//     type: 'carousel',
+//     cards: [
+//       {
+//         offername: '50%',
+//       },
+//       {
+//         offername: 'No delivery charge',
+//       },
+//     ],
+//   },
+//   {
+//     type: 'resturant',
+//     cards: [
+//       {
+//         name: 'burgerking',
+//         image:
+//           'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f10ae4046bd7de2c06df880324b67a58',
+//         cusisnes: ['Asian', 'chinese'],
+//         rating: '4.2',
+//       },
+//       {
+//         name: 'kfc',
+//         image:
+//           'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f10ae4046bd7de2c06df880324b67a58',
+//         cusisnes: ['Asian', 'chinese'],
+//         rating: '4.2',
+//       },
+//     ],
+//   },
+// ]
+
+<Restcard restaurant={restaurantlist[0]} />
+      <Restcard restaurant={restaurantlist[1]} />
+      <Restcard restaurant={restaurantlist[2]} />
+      <Restcard restaurant={restaurantlist[3]} />
+      <Restcard restaurant={restaurantlist[4]} />
+      <Restcard restaurant={restaurantlist[5]} /> 
+      
+
+
+
+
+
+
+
+      //1111
+      import { useEffect, useState } from 'react'
+import { restaurantlist } from './config'
+import Restcard from './Restcard'
+
+const Body = () => {
+  //const searchtext = 'kfc' this is js variable, we have to create a react variable
+  const [searchtext, setSearchInput] = useState('')
+  const [restaurants, searchrest] = useState(restaurantlist)
+  function filterData(restaurants, searchtext) {
+    return restaurants.filter((restaurant) => {
+      return restaurant.data.name.includes(searchtext)
+    })
+  }
+  // const express = require('express')
+  // const joi = require('joi')
+  // const app = express()
+  // const cors = require('cors')
+  // app.use(express.json())
+  // app.use(cors())
+
+  useEffect(() => {
+    getrestaurants()
+  }, [])
+
+  async function getrestaurants() {
+    const data = await fetch(
+      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9578269&lng=77.5981177&page_type=DESKTOP_WEB_LISTING',
+    )
+    const json = await data.json()
+    console.log(json)
+    searchrest(json?.data?.cards[2]?.data?.data?.cards)
+    // searchrest(data) // Update the state with the fetched data
+  }
+
+  return (
+    <>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="search"
+          value={searchtext}
+          onChange={(e) => {
+            //searchtext=e.target.value
+            //u cannot modify value in react like this its ok in js  using a func can modify the input that is setSearchInput
+            setSearchInput(e.target.value)
+            //e.target.value is whatever u write in input
+          }}
+        />
+
+        <button
+          className="btn"
+          onClick={() => {
+            // if (searchclicked === 'true') searchcl('false')
+            // else searchcl('true')
+            const data = filterData(restaurants, searchtext)
+            searchrest(data)
+          }}
+        >
+          search
+        </button>
+      </div>
+      {/* //This is known as two way binding
+      <h1>{searchtext}</h1>
+      <h1>{searchclicked}</h1> */}
+      <div className="list">
+        {restaurants.map((restaurant) => {
+          return <Restcard {...restaurant.data} key={restaurant.data.id} />
+        })}
+      </div>
+    </>
+  )
+}
+
+export default Body
